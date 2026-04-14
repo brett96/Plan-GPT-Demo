@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plan-GPT — Medicare Member Retention Platform</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/src/styles.css" />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <!-- ═══ NAV ═══ -->
+    <nav>
+      <a href="#" class="nav-logo">
+        <div class="nav-mark">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            <path d="M9 12l2 2 4-4" />
+          </svg>
+        </div>
+        <div>
+          <div class="nav-name">Plan-GPT</div>
+          <div class="nav-sub">Medicare Helper</div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="#demo">See It In Action</a>
+        <a href="#problem">The Problem</a>
+        <a href="#features">Features</a>
+        <a href="#outcomes">Outcomes</a>
+        <a href="#who">Who It's For</a>
+      </div>
+      <a href="#contact" class="nav-cta">Schedule a Demo</a>
+    </nav>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="hero">
+      <div>
+        <div class="hero-badge">
+          <div class="badge-dot"></div>
+          <span>Medicare Member Retention Platform</span>
+        </div>
+        <h1>
+          Retain More Members.<br />Grow Your Book.<br /><span class="gold"
+            >Scale Your Service.</span
+          >
+        </h1>
+        <p class="hero-sub">
+          Plan-GPT gives Medicare agents the tools to stay engaged with every member —
+          proactively, personally, and at scale — turning one-time enrollments into
+          lifetime relationships.
+        </p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn-p">Schedule a Demo</a>
+          <a href="#demo" class="btn-o">See It In Action →</a>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <div class="hero-photo">
+          <img
+            src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80&fit=crop"
+            alt="Insurance agent consulting with senior couple"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+          />
+          <div class="ph-ph" style="display: none">
+            <svg
+              width="48"
+              height="48"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <polyline points="21 15 16 10 5 21" />
+            </svg>
+            <span>Photo: Agent with<br />senior clients</span>
+          </div>
+        </div>
+        <div class="hero-stat-badge">
+          <div class="badge-big">95%</div>
+          <div class="badge-lbl">Member Retention<br />with Plan-GPT</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ STATS STRIP ═══ -->
+    <div class="stats-strip">
+      <div class="stat-item">
+        <span class="stat-num">95%</span>
+        <span class="stat-label">Member Retention Rate</span>
+        <div class="stat-desc">Versus the 50–70% industry average today</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">12×</span>
+        <span class="stat-label">More Annual Touchpoints</span>
+        <div class="stat-desc">From 1–2 interactions to year-round engagement</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">3×</span>
+        <span class="stat-label">Cross-Sell Opportunity</span>
+        <div class="stat-desc">
+          Engaged members discuss supplemental plans far more readily
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════
+         USE CASES — TABBED PHONE DEMO  (featured early on page)
+    ═════════════════════════════════════════════════════════ -->
+    <section class="use-cases" id="demo">
+      <div class="uc-inner">
+        <div class="uc-header">
+          <span class="eyebrow">See It In Action</span>
+          <h2>Proactive <span class="ac">Member Engagement</span> — All Year Long</h2>
+          <p class="body-copy ctr">
+            Plan-GPT automatically sends the right message to the right member at the
+            right time — always branded as coming from their agent. Click through to
+            see five real-world use cases.
+          </p>
+        </div>
+
+        <!-- Tab buttons -->
+        <div class="uc-tabs" role="tablist" aria-label="Use cases">
+          <button
+            class="uc-tab-btn active"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="uc-0"
+            id="uc-tab-0"
+            data-uc-index="0"
+          >
+            <span class="uc-tab-num">1</span>Welcome Aboard
+          </button>
+          <button
+            class="uc-tab-btn"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="uc-1"
+            id="uc-tab-1"
+            data-uc-index="1"
+          >
+            <span class="uc-tab-num">2</span>Dental &amp; Vision
+          </button>
+          <button
+            class="uc-tab-btn"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="uc-2"
+            id="uc-tab-2"
+            data-uc-index="2"
+          >
+            <span class="uc-tab-num">3</span>Save on Rx
+          </button>
+          <button
+            class="uc-tab-btn"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="uc-3"
+            id="uc-tab-3"
+            data-uc-index="3"
+          >
+            <span class="uc-tab-num">4</span>Deductible Met
+          </button>
+          <button
+            class="uc-tab-btn"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="uc-4"
+            id="uc-tab-4"
+            data-uc-index="4"
+          >
+            <span class="uc-tab-num">5</span>Plan Review (AEP)
+          </button>
+        </div>
+
+        <!-- ─── TAB 1: WELCOME ─── -->
+        <div class="uc-panel active" id="uc-0" role="tabpanel" aria-labelledby="uc-tab-0">
+          <div class="uc-context">
+            <div class="uc-tag tag-welcome">Plan Activation</div>
+            <h3>Welcome Aboard — Your Plan Starts Today</h3>
+            <p>
+              The moment a new member's Medicare Advantage plan becomes effective,
+              Plan-GPT automatically triggers a personalized welcome message from their
+              agent. This critical first touchpoint sets the tone for the entire
+              member relationship — ensuring members feel informed, cared for, and
+              connected from day one.
+            </p>
+            <div class="uc-benefit-box">
+              <div class="uc-benefit-label">Why It Matters</div>
+              <div class="uc-benefit-text">
+                Members who receive a proactive welcome are significantly more likely
+                to engage with their benefits, use the Medicare Helper app, and remain
+                loyal at renewal.
+              </div>
+            </div>
+            <div class="uc-timing">
+              <div class="uc-timing-dot"></div>
+              Triggered automatically on plan effective date
+            </div>
+          </div>
+          <div class="uc-phone-wrap">
+            <div class="phone" aria-hidden="true">
+              <div class="p-notch"><div class="p-bar"></div><div class="p-dot"></div></div>
+              <div class="p-screen">
+                <div class="p-header">
+                  <div class="p-top">
+                    <div class="p-brand">Medicare Helper</div>
+                    <div class="p-powered">Powered by Plan-GPT</div>
+                  </div>
+                  <div class="p-plan">Humana Gold Plus HMO · Active ✓</div>
+                </div>
+                <div class="p-tabs">
+                  <div class="p-tab on">Chat</div>
+                  <div class="p-tab">Rx</div>
+                  <div class="p-tab">Videos</div>
+                  <div class="p-tab">Analytics</div>
+                  <div class="p-tab">Agent</div>
+                </div>
+                <div class="p-body">
+                  <div class="b-bot">
+                    <div class="b-sender">Bob Broker · Your Agent</div>
+                    <div class="b-text">
+                      Welcome aboard! 🎉 Your Humana Gold Plus Medicare Advantage plan is
+                      effective as of today — you can begin using your benefits right away.
+                    </div>
+                  </div>
+                  <div class="b-bot">
+                    <div class="b-sender">Bob Broker · Your Agent</div>
+                    <div class="b-text">
+                      Your plan includes doctor visits, prescriptions, dental, vision, and
+                      hearing — all in one plan with a $0 monthly premium.
+                    </div>
+                  </div>
+                  <div class="b-bot">
+                    <div class="b-sender">Bob Broker · Your Agent</div>
+                    <div class="b-proactive">
+                      Please reach out anytime — I'm here to help you get the most out of your
+                      plan. You can also explore all your benefits using the tabs above.
+                    </div>
+                  </div>
+                  <div class="b-user">Thank you Bob! Excited to have coverage.</div>
+                  <div class="b-bot">
+                    <div class="b-sender">Bob Broker · Your Agent</div>
+                    <div class="b-text">
+                      My pleasure! I'll check in periodically with tips to help you make the
+                      most of your benefits. 😊
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── TAB 2: DENTAL / VISION ─── -->
+        <div class="uc-panel" id="uc-1" role="tabpanel" aria-labelledby="uc-tab-1" hidden>
+          <div class="uc-context">
+            <div class="uc-tag tag-benefits">Benefits Education</div>
+            <h3>Unused Benefits Alert — Dental &amp; Vision</h3>
+            <p>
+              Plan-GPT monitors each member's benefits utilization throughout the year.
+              When it detects that a member hasn't used their dental or vision coverage
+              — benefits they may not even know they have — it automatically sends a
+              personalized reminder from their agent, complete with an offer to help
+              find a provider.
+            </p>
+            <div class="uc-benefit-box gold-border">
+              <div class="uc-benefit-label">Why It Matters</div>
+              <div class="uc-benefit-text">
+                Unused benefits are the #1 driver of member dissatisfaction. Members who use their
+                dental and vision coverage rate their plan higher and renew at a far greater rate.
+              </div>
+            </div>
+            <div class="uc-timing">
+              <div class="uc-timing-dot uc-timing-dot--gold"></div>
+              Triggered mid-year when benefit utilization is $0
+            </div>
+          </div>
+          <div class="uc-phone-wrap">
+            <div class="phone" aria-hidden="true">
+              <div class="p-notch"><div class="p-bar"></div><div class="p-dot"></div></div>
+              <div class="p-screen">
+                <div class="p-header">
+                  <div class="p-top">
+                    <div class="p-brand">Medicare Helper</div>
+                    <div class="p-powered">Powered by Plan-GPT</div>
+                  </div>
+                  <div class="p-plan">Humana Gold Plus HMO · Active ✓</div>
+                </div>
+                <div class="p-tabs">
+                  <div class="p-tab on">Chat</div>
+                  <div class="p-tab">Rx</div>
+                  <div class="p-tab">Videos</div>
+                  <div class="p-tab">Analytics</div>
+                  <div class="p-tab">Agent</div>
+                </div>
+                <div class="p-body">
+                  <div class="b-bot">
+                    <div class="b-sender">Bob Broker · Your Agent</div>
+                    <div class="b-text">
+                      Hi! I noticed you haven't used your dental or vision benefits yet this year — I
+                      wanted to make sure you knew about them!
+                    </div>
+                  </div>
+                  <div class="b-bot">
+                    <div class="b-sender">Bob Broker · Your Agent</div>
+                    <div class="b-gold">
+                      <strong>Your Included Benefits:</strong><br />
+                      ✓ Routine dental exam — $0 copay<br />
+                      ✓ Dental X-rays — $0 copay<br />
+                      ✓ Comprehensive eye exam — $0 copay<br />
+                      ✓ Up to $1,500 for dental services
+                    </div>
+                  </div>
+                  <div class="b-bot">
+                    <div class="b-sender">Bob Broker · Your Agent</div>
+                    <div class="b-text">
+                      Would you like me to help you find an in-network provider near you?
+                    </div>
+                  </div>
+                  <div class="b-user">Yes please! I've been meaning to find a dentist.</div>
+                  <div class="b-bot">
+                    <div class="b-sender">Bob Broker · Your Agent</div>
+                    <div class="b-btn">🔍 Find an In-Network Provider</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── TAB 3: SAVE ON RX ─── -->
+        <div class="uc-panel" id="uc-2" role="tabpanel" aria-labelledby="uc-tab-2" hidden>
+          <div class="uc-context">
+            <div class="uc-tag tag-rx">Rx Savings</div>
+            <h3>Prescription Savings — Find the Lowest Cost Pharmacy</h3>
+            <p>
+              When Plan-GPT detects that a member is filling prescriptions at higher-cost
+              pharmacies, it automatically surfaces a personalized pharmacy comparison —
+              showing exactly where the same medications can be filled for less, right
+              from their plan's preferred network.
+            </p>
+            <div class="uc-benefit-box">
+              <div class="uc-benefit-label">Why It Matters</div>
+              <div class="uc-benefit-text">
+                Prescription drug costs are the #1 reason Medicare members consider switching plans.
+                Proactively helping members save on Rx builds lasting loyalty and positions the agent
+                as a year-round advocate.
+              </div>
+            </div>
+            <div class="uc-timing">
+              <div class="uc-timing-dot"></div>
+              Triggered when savings opportunity is detected from fills
+            </div>
+          </div>
+          <div class="uc-phone-wrap">
+            <div class="phone" aria-hidden="true">
+              <div class="p-notch"><div class="p-bar"></div><div class="p-dot"></div></div>
+              <div class="p-screen">
+                <div class="p-header">
+                  <div class="p-top">
+                    <div class="p-brand">Medicare Helper</div>
+                    <div class="p-powered">Powered by Plan-GPT</div>
+                  </div>
+                  <div class="p-plan">Humana Gold Plus HMO · Active ✓</div>
+                </div>
+                <div class="p-tabs">
+                  <div class="p-tab on">Chat</div>
+                  <div class="p-tab p-tab--on-teal">Rx</div>
+                  <div class="p-tab">Videos</div>
+                  <div class="p-tab">Analytics</div>
+                  <div class="p-tab">Agent</div>
+                </div>
+                <div class="p-body">
+                  <div class="b-bot">
+                    <div class="b-sender">Bob Broker · Your Agent</div>
+                    <div class="b-text">
+                      Did you know we can help you find lower-cost pharmacies for your prescriptions?
+                      Based on your recent fills, here's what you could save:
+                    </div>
+                  </div>
+                  <div class="b-bot">
+                    <div class="b-sender">Bob Broker · Your Agent</div>
+                    <div class="b-text">
+                      <strong>Lisinopril 10mg · 30-day supply</strong>
+                      <table class="mini-table">
+                        <tr><th>Pharmacy</th><th>Distance</th><th>Your Cost</th></tr>
+                        <tr class="best-row"><td>CVS Pharmacy ✓</td><td>0.4 mi</td><td class="best-price">$0</td></tr>
+                        <tr><td>Walgreens</td><td>0.9 mi</td><td>$0</td></tr>
+                        <tr><td>Walmart Pharm.</td><td>1.4 mi</td><td>$4</td></tr>
+                        <tr><td>Rite Aid</td><td>1.7 mi</td><td>$7</td></tr>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="b-bot">
+                    <div class="b-sender">Bob Broker · Your Agent</div>
+                    <div class="b-proactive">
+                      Filling at CVS saves you up to $84/year on this medication alone. Click Save Rx
+                      above to see savings across all your prescriptions.
+                    </div>
+                  </div>
+                  <div class="b-user">Wow — I didn't realize it was that different!</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── TAB 4: DEDUCTIBLE MET ─── -->
+        <div class="uc-panel" id="uc-3" role="tabpanel" aria-labelledby="uc-tab-3" hidden>
+          <div class="uc-context">
+            <div class="uc-tag tag-ded">Deductible Tracking</div>
+            <h3>Great News — You've Met Your Deductible!</h3>
+            <p>
+              Plan-GPT tracks each member's deductible progress in real time. The moment a member
+              meets their prescription drug deductible, it sends an automatic notification —
+              explaining exactly what it means for them and what to watch for going forward. Most
+              members have no idea this milestone has been reached.
+            </p>
+            <div class="uc-benefit-box">
+              <div class="uc-benefit-label">Why It Matters</div>
+              <div class="uc-benefit-text">
+                Members who understand their cost structure feel more confident in their plan and
+                trust their agent more. This message turns a billing event into a meaningful,
+                agent-branded moment of care.
+              </div>
+            </div>
+            <div class="uc-timing">
+              <div class="uc-timing-dot"></div>
+              Triggered automatically when Rx deductible is fully met
+            </div>
+          </div>
+          <div class="uc-phone-wrap">
+            <div class="phone" aria-hidden="true">
+              <div class="p-notch"><div class="p-bar"></div><div class="p-dot"></div></div>
+              <div class="p-screen">
+                <div class="p-header">
+                  <div class="p-top">
+                    <div class="p-brand">Medicare Helper</div>
+                    <div class="p-powered">Powered by Plan-GPT</div>
+                  </div>
+                  <div class="p-plan">Humana Gold Plus HMO · Active ✓</div>
+                </div>
+                <div class="p-tabs">
+                  <div class="p-tab on">Chat</div>
+                  <div class="p-tab">Rx</div>
+                  <div class="p-tab">Videos</div>
+                  <div class="p-tab">Analytics</div>
+                  <div class="p-tab">Agent</div>
+                </div>
+                <div class="p-body">
+                  <div class="b-bot">
+                    <div class="b-sender">Bob Broker · Your Agent</div>
+                    <div class="b-text">
+                      Great news! 🎉 You've met your prescription drug deductible of $650 for this plan year.
+                    </div>
+                  </div>
+                  <div class="b-bot">
+                    <div class="b-sender">Bob Broker · Your Agent</div>
+                    <div class="b-proactive">
+                      From now until December 31st, you'll no longer pay toward your deductible for covered
+                      medications — your plan picks up the cost at your normal copay level.
+                    </div>
+                  </div>
+                  <div class="b-bot">
+                    <div class="b-sender">Bob Broker · Your Agent</div>
+                    <div class="b-text">
+                      <strong>One thing to note:</strong> Some medications may not be covered by your plan's
+                      formulary. If you're prescribed a new medication, I can help you:
+                    </div>
+                  </div>
+                  <div class="b-bot">
+                    <div class="b-sender">Bob Broker · Your Agent</div>
+                    <div class="b-gold">
+                      🔍 Search the formulary for coverage<br />
+                      💊 Find a covered alternative<br />
+                      💰 Compare costs at nearby pharmacies
+                    </div>
+                  </div>
+                  <div class="b-user">That's great! Thanks for letting me know Bob.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── TAB 5: AEP PREP ─── -->
+        <div class="uc-panel" id="uc-4" role="tabpanel" aria-labelledby="uc-tab-4" hidden>
+          <div class="uc-context">
+            <div class="uc-tag tag-aep">Annual Enrollment Prep</div>
+            <h3>Plan Review — AEP Starts in 1 Month</h3>
+            <p>
+              One month before the Annual Enrollment Period opens, Plan-GPT sends a personalized message to
+              each member — letting them know their agent is ready to review their plan options based on
+              their actual claims data. This proactive outreach ensures agents are first in the door,
+              before competitors reach out.
+            </p>
+            <div class="uc-benefit-box gold-border">
+              <div class="uc-benefit-label">Why It Matters</div>
+              <div class="uc-benefit-text">
+                Agents who reach members first during AEP retain them at dramatically higher rates. This
+                message positions the agent as a proactive advisor — not a salesperson showing up at the
+                last minute.
+              </div>
+            </div>
+            <div class="uc-timing">
+              <div class="uc-timing-dot uc-timing-dot--gold"></div>
+              Triggered automatically 30 days before AEP opens (Sept 15)
+            </div>
+          </div>
+          <div class="uc-phone-wrap">
+            <div class="phone" aria-hidden="true">
+              <div class="p-notch"><div class="p-bar"></div><div class="p-dot"></div></div>
+              <div class="p-screen">
+                <div class="p-header">
+                  <div class="p-top">
+                    <div class="p-brand">Medicare Helper</div>
+                    <div class="p-powered">Powered by Plan-GPT</div>
+                  </div>
+                  <div class="p-plan">Humana Gold Plus HMO · Active ✓</div>
+                </div>
+                <div class="p-tabs">
+                  <div class="p-tab on">Chat</div>
+                  <div class="p-tab">Rx</div>
+                  <div class="p-tab">Videos</div>
+                  <div class="p-tab">Analytics</div>
+                  <div class="p-tab p-tab--on-gold">Best Plan</div>
+                </div>
+                <div class="p-body">
+                  <div class="b-bot">
+                    <div class="b-sender">Bob Broker · Your Agent</div>
+                    <div class="b-text">
+                      Hi! The Annual Enrollment Period (AEP) begins in just 1 month — October 15th. This is
+                      your chance to review your plan and make any changes for next year.
+                    </div>
+                  </div>
+                  <div class="b-bot">
+                    <div class="b-sender">Bob Broker · Your Agent</div>
+                    <div class="b-proactive">
+                      I've already reviewed your 2026 medical and prescription drug claims. I'd like to
+                      compare your current plan against available options to make sure you're getting the
+                      best coverage at the lowest cost for your specific needs.
+                    </div>
+                  </div>
+                  <div class="b-bot">
+                    <div class="b-sender">Bob Broker · Your Agent</div>
+                    <div class="b-text">
+                      Our goal is simple: <strong>save you money and find the right plan for you.</strong> Would you
+                      like to schedule a time to review your options?
+                    </div>
+                  </div>
+                  <div class="b-user">Yes, let's set something up!</div>
+                  <div class="b-bot">
+                    <div class="b-sender">Bob Broker · Your Agent</div>
+                    <div class="b-btn gold-btn">📅 Schedule Appointment</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ PROBLEM ═══ -->
+    <section class="problem" id="problem">
+      <div class="problem-inner">
+        <div class="prob-top">
+          <span class="eyebrow">The Problem</span>
+          <h2>Retention Fails Because<br />Agents Go <span class="ac">Silent</span> After AEP</h2>
+          <p class="body-copy">
+            The Medicare market has a fundamental engagement gap. Members choose a plan in October — then
+            hear nothing until the next enrollment period. By then, trust has eroded and competitors have
+            moved in.
+          </p>
+        </div>
+        <div class="prob-grid">
+          <div class="quote-card">
+            <div class="q-mark">"</div>
+            <div class="q-text">
+              Members who leave aren't unhappy with their coverage. They're unhappy with the silence.
+              They just needed someone to check in.
+            </div>
+            <div class="q-attr">— Common finding across Medicare retention research</div>
+            <div class="q-stats">
+              <div class="q-stat">
+                <div class="q-stat-n">50–70%</div>
+                <div class="q-stat-l">Industry avg. member retention today</div>
+              </div>
+              <div class="q-stat">
+                <div class="q-stat-n">1–2×</div>
+                <div class="q-stat-l">Avg. agent touchpoints per year</div>
+              </div>
+            </div>
+          </div>
+          <div class="prob-cards">
+            <div class="prob-card">
+              <div class="prob-icon pi-t">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#2A9D72"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="8" x2="12" y2="12" />
+                  <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+              </div>
+              <div>
+                <div class="prob-title">Annual Enrollment Period Is Too Late</div>
+                <div class="prob-txt">
+                  By the time AEP arrives, dissatisfied members have already decided to switch. Waiting
+                  until October to re-engage is fighting an uphill battle every year.
+                </div>
+              </div>
+            </div>
+            <div class="prob-card">
+              <div class="prob-icon pi-g">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#C08020"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  aria-hidden="true"
+                >
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <div>
+                <div class="prob-title">Agents Can't Scale High-Touch Service</div>
+                <div class="prob-txt">
+                  A licensed agent managing 500+ clients cannot provide personalized, proactive service
+                  to every member. Most feel like a policy number — not a person with a trusted advisor.
+                </div>
+              </div>
+            </div>
+            <div class="prob-card">
+              <div class="prob-icon pi-p">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#276749"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <div>
+                <div class="prob-title">Unused Benefits Create Dissatisfaction</div>
+                <div class="prob-txt">
+                  Members who never use dental, vision, OTC, or wellness benefits blame their agent and
+                  carrier — even when the coverage was available all along.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ HOW IT WORKS ═══ -->
+    <section class="how" id="how">
+      <div class="how-inner">
+        <div class="how-head">
+          <span class="eyebrow">How It Works</span>
+          <h2>AI Does the Work.<br />Your Agent Gets the <span class="ac">Credit.</span></h2>
+          <p class="body-copy">
+            Plan-GPT runs quietly in the background — monitoring each member's plan, identifying savings
+            and gaps, and triggering personalized outreach that looks and feels like it came directly
+            from their agent.
+          </p>
+        </div>
+        <div class="how-grid">
+          <div class="how-card">
+            <div class="how-step-lbl">Step 01</div>
+            <div class="how-icon" aria-hidden="true">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+              >
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+              </svg>
+            </div>
+            <div class="how-title">Member &amp; Plan Data Ingested</div>
+            <div class="how-txt">
+              Connects to carrier data, formulary, and member utilization to build a real-time profile
+              for every member on the book.
+            </div>
+          </div>
+          <div class="how-card">
+            <div class="how-step-lbl">Step 02</div>
+            <div class="how-icon" aria-hidden="true">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </div>
+            <div class="how-title">AI Identifies Savings &amp; Gaps</div>
+            <div class="how-txt">
+              Monitors for Rx savings, unused benefits, approaching deductibles, and plan optimization
+              moments — all year long, automatically.
+            </div>
+          </div>
+          <div class="how-card">
+            <div class="how-step-lbl">Step 03</div>
+            <div class="how-icon" aria-hidden="true">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+            </div>
+            <div class="how-title">Agent Alerted &amp; Outreach Triggered</div>
+            <div class="how-txt">
+              The agent is notified, and personalized member communication goes out via the Medicare
+              Helper app — branded as the agent's own message.
+            </div>
+          </div>
+          <div class="how-card">
+            <div class="how-step-lbl">Step 04</div>
+            <div class="how-icon" aria-hidden="true">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                />
+              </svg>
+            </div>
+            <div class="how-title">Trust Builds. Members Stay.</div>
+            <div class="how-txt">
+              Members experience a high-touch relationship with their agent all year — building the
+              loyalty that drives renewals, referrals, and cross-sell opportunities.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ FEATURES ═══ -->
+    <section class="features" id="features">
+      <div class="feat-inner">
+        <div class="feat-head">
+          <span class="eyebrow light">Platform Features</span>
+          <h2 class="white">Everything Needed to<br />Win the <span class="ac">Whole Year</span></h2>
+          <p class="body-copy light">
+            Six purpose-built modules working together to keep members informed, engaged, and loyal —
+            without adding hours to an agent's day.
+          </p>
+        </div>
+        <div class="feat-grid">
+          <div class="feat-card">
+            <div class="f-icon fi-g" aria-hidden="true">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#F5C158"
+                stroke-width="2"
+                stroke-linecap="round"
+              >
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+            </div>
+            <div class="f-tag ft-g">AI-Powered</div>
+            <h3>Proactive AI Chat &amp; Member Guidance</h3>
+            <p>
+              An always-on AI assistant answering member questions — as the agent's trusted resource,
+              never a generic bot.
+            </p>
+          </div>
+          <div class="feat-card">
+            <div class="f-icon fi-t" aria-hidden="true">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#6ECFA9"
+                stroke-width="2"
+                stroke-linecap="round"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                />
+              </svg>
+            </div>
+            <div class="f-tag ft-t">Rx Savings</div>
+            <h3>Prescription Savings Engine</h3>
+            <p>Identifies generic alternatives and preferred pharmacies. Members save money. Agents get the credit.</p>
+          </div>
+          <div class="feat-card">
+            <div class="f-icon fi-w" aria-hidden="true">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="rgba(255,255,255,0.7)"
+                stroke-width="2"
+                stroke-linecap="round"
+              >
+                <polygon points="23 7 16 12 23 17 23 7" />
+                <rect x="1" y="5" width="15" height="14" rx="2" />
+              </svg>
+            </div>
+            <div class="f-tag ft-w">Education</div>
+            <h3>Personalized Video Library</h3>
+            <p>Short benefit-education videos matched to each member's specific plan — delivered when most relevant.</p>
+          </div>
+          <div class="feat-card">
+            <div class="f-icon fi-t" aria-hidden="true">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#6ECFA9"
+                stroke-width="2"
+                stroke-linecap="round"
+              >
+                <line x1="18" y1="20" x2="18" y2="10" />
+                <line x1="12" y1="20" x2="12" y2="4" />
+                <line x1="6" y1="20" x2="6" y2="14" />
+              </svg>
+            </div>
+            <div class="f-tag ft-t">Analytics</div>
+            <h3>Benefits Utilization Dashboard</h3>
+            <p>Real-time deductible, MOOP, and benefit utilization tracking — with smart alerts when a member needs attention.</p>
+          </div>
+          <div class="feat-card">
+            <div class="f-icon fi-g" aria-hidden="true">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#F5C158"
+                stroke-width="2"
+                stroke-linecap="round"
+              >
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+              </svg>
+            </div>
+            <div class="f-tag ft-g">AEP Ready</div>
+            <h3>AI-Driven Plan Recommendations</h3>
+            <p>Analyzes actual utilization at renewal to recommend the optimal plan — giving agents data-backed conversations.</p>
+          </div>
+          <div class="feat-card">
+            <div class="f-icon fi-w" aria-hidden="true">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="rgba(255,255,255,0.7)"
+                stroke-width="2"
+                stroke-linecap="round"
+              >
+                <circle cx="12" cy="8" r="4" />
+                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+              </svg>
+            </div>
+            <div class="f-tag ft-w">Relationship</div>
+            <h3>Agent Profile &amp; Year-Round Presence</h3>
+            <p>The agent's name, photo, and contact info front and center in the member app — reinforcing the human relationship behind every AI interaction.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ OUTCOMES ═══ -->
+    <section class="outcomes" id="outcomes">
+      <div class="out-inner">
+        <div class="out-head">
+          <span class="eyebrow">Business Outcomes</span>
+          <h2>The Numbers That<br />Move the <span class="ac">Business</span></h2>
+          <p class="body-copy">Plan-GPT is built for one purpose: to improve the financial performance of every agent, agency, and carrier that deploys it.</p>
+        </div>
+        <div class="out-grid">
+          <div class="out-card c0">
+            <div class="out-num">95%</div>
+            <div class="out-lbl">Member Retention Rate</div>
+            <div class="out-desc">Versus a 50–70% industry average. Every point retained is direct revenue preserved at zero acquisition cost.</div>
+          </div>
+          <div class="out-card c1">
+            <div class="out-num">12×</div>
+            <div class="out-lbl">More Annual Touchpoints</div>
+            <div class="out-desc">Consistent, personalized engagement throughout the plan year — not just AEP.</div>
+          </div>
+          <div class="out-card c2">
+            <div class="out-num">3×</div>
+            <div class="out-lbl">Cross-Sell Opportunity</div>
+            <div class="out-desc">Engaged members are 3× more likely to discuss supplemental products with their trusted agent.</div>
+          </div>
+          <div class="out-card c3">
+            <div class="out-num">↓40%</div>
+            <div class="out-lbl">Routine Inquiry Time</div>
+            <div class="out-desc">AI handles benefit questions and Rx lookups — freeing agents for high-value conversations.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ MISSION ═══ -->
+    <section class="mission">
+      <div class="mission-inner">
+        <div class="mission-grid">
+          <div class="m-photo">
+            <img
+              src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80&fit=crop"
+              alt="Healthcare professional consulting with patient"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+            />
+            <div class="ph-ph" style="display: none">
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="1.5"
+                aria-hidden="true"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <polyline points="21 15 16 10 5 21" />
+              </svg>
+              <span class="ph-ph-caption">Photo: Healthcare<br />professional with patient</span>
+            </div>
+          </div>
+          <div>
+            <span class="eyebrow">Our Mission</span>
+            <h2>Eliminating Friction<br /><span class="ac">Improves Lives</span></h2>
+            <div class="m-card">
+              <h3>Every Member Deserves a Great Advisor</h3>
+              <p>
+                Medicare is one of the most important — and most confusing — decisions a person will ever
+                navigate. Plan-GPT exists to ensure that every member, not just the most accessible ones,
+                has a knowledgeable agent showing up for them throughout the year.
+              </p>
+              <p>
+                When agents are empowered to scale their care, members make better decisions, use more of
+                their benefits, and stay healthier. That's better for everyone — members, agents, carriers,
+                and the healthcare system as a whole.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ WHO IT'S FOR ═══ -->
+    <section class="who" id="who">
+      <div class="who-inner">
+        <div class="who-head">
+          <span class="eyebrow light">Who It's Built For</span>
+          <h2 class="white">Purpose-Built for Every Level<br />of the <span class="ac">Distribution Chain</span></h2>
+        </div>
+        <div class="who-grid">
+          <div class="who-card">
+            <div class="w-icon" aria-hidden="true">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+              >
+                <circle cx="12" cy="8" r="4" />
+                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+              </svg>
+            </div>
+            <h3>Independent &amp; Field Agents</h3>
+            <p>Deliver enterprise-grade member service to every client on your book — automatically — while staying focused on the relationships that matter most.</p>
+            <ul class="who-list">
+              <li><span class="chk">✓</span>Automated year-round member engagement</li>
+              <li><span class="chk">✓</span>Smart alerts when a member needs attention</li>
+              <li><span class="chk">✓</span>Show up at AEP as the trusted advisor</li>
+              <li><span class="chk">✓</span>Unlock cross-sell through earned trust</li>
+            </ul>
+          </div>
+          <div class="who-card">
+            <div class="w-icon" aria-hidden="true">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+              >
+                <rect x="2" y="7" width="20" height="14" rx="2" />
+                <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+              </svg>
+            </div>
+            <h3>Agencies &amp; FMOs</h3>
+            <p>Give your agent force the retention edge competitors can't match. Make Plan-GPT the value-add that attracts top producers and keeps them loyal.</p>
+            <ul class="who-list">
+              <li><span class="chk">✓</span>Deploy across your entire agent force</li>
+              <li><span class="chk">✓</span>Track retention KPIs at every level</li>
+              <li><span class="chk">✓</span>Attract and retain top-producing agents</li>
+              <li><span class="chk">✓</span>Reduce churn-related revenue leakage</li>
+            </ul>
+          </div>
+          <div class="who-card">
+            <div class="w-icon" aria-hidden="true">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <h3>Medicare Carriers</h3>
+            <p>Member satisfaction and benefit utilization drive Star Ratings. Plan-GPT improves both while strengthening your agent distribution network.</p>
+            <ul class="who-list">
+              <li><span class="chk">✓</span>Improve Star Ratings through higher utilization</li>
+              <li><span class="chk">✓</span>Reduce member churn and disenrollment</li>
+              <li><span class="chk">✓</span>Strengthen agent-carrier relationships</li>
+              <li><span class="chk">✓</span>White-label deployment under your brand</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CTA ═══ -->
+    <section class="cta" id="contact">
+      <div class="cta-inner">
+        <span class="eyebrow light">Get Started</span>
+        <h2>Ready to Stop Losing<br /><span class="ac">Members You've Already Won?</span></h2>
+        <p>Schedule a 30-minute product walkthrough — and we'll model the revenue impact for your specific book of business.</p>
+        <div class="cta-btns">
+          <a href="mailto:demo@plan-gpt.com" class="btn-w">Schedule a Demo</a>
+          <a href="mailto:info@plan-gpt.com" class="btn-ow">Contact Sales</a>
+        </div>
+        <div class="trust">
+          <div class="t-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <path d="M9 12l2 2 4-4" />
+            </svg>
+            HIPAA-Compliant
+          </div>
+          <div class="t-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+              <rect x="2" y="7" width="20" height="14" rx="2" />
+            </svg>
+            White-Label Available
+          </div>
+          <div class="t-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+            </svg>
+            Carrier Data Integration
+          </div>
+          <div class="t-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            30-Day Onboarding
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer>
+      <div>
+        <div class="f-name">Plan-GPT</div>
+        <div class="f-sub">Medicare Helper Platform</div>
+      </div>
+      <div class="f-links">
+        <a href="#">Platform Overview</a>
+        <a href="#">For Agents</a>
+        <a href="#">For Agencies &amp; FMOs</a>
+        <a href="#">For Carriers</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="f-copy">© 2026 Plan-GPT. All rights reserved.</div>
+    </footer>
+  </body>
+</html>
+
