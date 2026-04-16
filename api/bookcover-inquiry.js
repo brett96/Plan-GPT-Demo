@@ -130,8 +130,30 @@ export default async function handler(req, res) {
         }),
       });
       const textOut = await r.text();
+      const looksLikeHtml =
+        textOut.trim().startsWith("<!DOCTYPE") ||
+        textOut.includes("<html") ||
+        textOut.includes("Access Denied");
+
       if (!r.ok) {
-        errors.push(`Sheet webhook failed: ${r.status} ${textOut}`);
+        const hint = looksLikeHtml
+          ? " — URL must be the deployed Web App endpoint ending in /exec (Deploy → Web app → copy URL), not script.google.com/.../edit. Set access to Anyone."
+          : "";
+        const preview = looksLikeHtml ? " [HTML error page]" : ` ${textOut.slice(0, 200)}`;
+        errors.push(`Sheet webhook failed: ${r.status}${hint}${preview}`);
+      } else if (looksLikeHtml) {
+        errors.push(
+          "Sheet webhook returned HTML instead of JSON — check GOOGLE_APPS_SCRIPT_URL uses the /exec deployment URL.",
+        );
+      } else {
+        try {
+          const j = JSON.parse(textOut);
+          if (j && j.ok === false && j.error) {
+            errors.push(`Sheet webhook: ${j.error}`);
+          }
+        } catch {
+          /* non-JSON success is ok */
+        }
       }
     } catch (e) {
       errors.push(`Sheet webhook failed: ${e.message || e}`);
