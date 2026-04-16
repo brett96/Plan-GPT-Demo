@@ -5,8 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node scripts/prep-bookcover.mjs && vite build",
     "preview": "vite preview"
+  },
+  "dependencies": {
+    "nodemailer": "^7.0.3"
   },
   "devDependencies": {
     "vite": "^7.1.0"

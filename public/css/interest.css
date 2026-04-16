@@ -1,0 +1,166 @@
+/* Interest form — matches BookCover / CercaLabs palette */
+:root {
+  --mint: #e8f4ee;
+  --forest: #1c4332;
+  --teal: #2a9d72;
+  --teal-h: #238c62;
+  --gold: #c08020;
+  --slate: #4b6358;
+  --muted: #7a9488;
+  --border: #c8e0d4;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body.interest-page {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Open Sans", sans-serif;
+  background: var(--mint);
+  color: var(--forest);
+  line-height: 1.6;
+}
+
+.interest-wrap {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.interest-back {
+  display: inline-block;
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--teal);
+  text-decoration: none;
+  margin-bottom: 24px;
+}
+.interest-back:hover {
+  text-decoration: underline;
+}
+
+.interest-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 36px 32px;
+  box-shadow: 0 8px 32px rgba(28, 67, 50, 0.1);
+  border-top: 4px solid var(--teal);
+}
+
+.interest-card h1 {
+  font-family: "Nunito", sans-serif;
+  font-size: clamp(24px, 4vw, 30px);
+  font-weight: 900;
+  margin: 0 0 8px;
+  letter-spacing: -0.5px;
+}
+
+.interest-card .sub {
+  font-size: 15px;
+  color: var(--slate);
+  margin: 0 0 28px;
+}
+
+.interest-field {
+  margin-bottom: 18px;
+}
+
+.interest-field label {
+  display: block;
+  font-family: "Nunito", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--forest);
+  margin-bottom: 6px;
+}
+
+.interest-field label .req {
+  color: var(--gold);
+}
+
+.interest-field input,
+.interest-field select,
+.interest-field textarea {
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--forest);
+}
+
+.interest-field input:focus,
+.interest-field select:focus,
+.interest-field textarea:focus {
+  outline: none;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(42, 157, 114, 0.15);
+}
+
+.interest-field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.interest-submit {
+  font-family: "Nunito", sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  width: 100%;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 8px;
+  background: var(--teal);
+  color: #fff;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+
+.interest-submit:hover:not(:disabled) {
+  background: var(--teal-h);
+}
+
+.interest-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.interest-msg {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  display: none;
+}
+
+.interest-msg.error {
+  display: block;
+  background: #fde8e8;
+  color: #8b1a1a;
+  border: 1px solid #f5c2c2;
+}
+
+.interest-msg.success {
+  display: block;
+  background: #e6f5ef;
+  color: var(--forest);
+  border: 1px solid var(--border);
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookCover — Join the interest list</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/interest.css" />
+  </head>
+  <body class="interest-page">
+    <div class="interest-wrap">
+      <a class="interest-back" href="/bookcover.html">← Back to BookCover</a>
+
+      <div class="interest-card">
+        <h1>Join the interest list</h1>
+        <p class="sub">
+          Tell us a bit about you. We’ll follow up from CercaLabs and keep your details for launch
+          updates only.
+        </p>
+
+        <form id="bookcover-interest-form" novalidate>
+          <div class="interest-field hp-field" aria-hidden="true">
+            <label for="company-website">Company website</label>
+            <input type="text" id="company-website" name="_companyWebsite" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <div class="interest-field">
+            <label for="name">Full name <span class="req">*</span></label>
+            <input type="text" id="name" name="name" required autocomplete="name" />
+          </div>
+
+          <div class="interest-field">
+            <label for="email">Work email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" required autocomplete="email" />
+          </div>
+
+          <div class="interest-field">
+            <label for="company">Company / agency / organization</label>
+            <input type="text" id="company" name="company" autocomplete="organization" />
+          </div>
+
+          <div class="interest-field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" />
+          </div>
+
+          <div class="interest-field">
+            <label for="role">I’m interested as</label>
+            <select id="role" name="role">
+              <option value="">Select one</option>
+              <option value="Independent or field agent">Independent or field agent</option>
+              <option value="Agency or FMO">Agency or FMO</option>
+              <option value="Medicare carrier">Medicare carrier</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="interest-field">
+            <label for="message">Anything else we should know?</label>
+            <textarea id="message" name="message" placeholder="Optional — book size, timeline, questions…"></textarea>
+          </div>
+
+          <button type="submit" class="interest-submit" id="submit-btn">Submit</button>
+        </form>
+
+        <div id="form-msg" class="interest-msg" role="status"></div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var form = document.getElementById("bookcover-interest-form");
+        var btn = document.getElementById("submit-btn");
+        var msg = document.getElementById("form-msg");
+
+        form.addEventListener("submit", async function (e) {
+          e.preventDefault();
+          msg.className = "interest-msg";
+          msg.textContent = "";
+          msg.style.display = "none";
+
+          var fd = new FormData(form);
+          var payload = {
+            name: (fd.get("name") || "").trim(),
+            email: (fd.get("email") || "").trim(),
+            company: (fd.get("company") || "").trim(),
+            phone: (fd.get("phone") || "").trim(),
+            role: (fd.get("role") || "").trim(),
+            message: (fd.get("message") || "").trim(),
+            _companyWebsite: (fd.get("_companyWebsite") || "").trim(),
+          };
+
+          if (!payload.name || !payload.email) {
+            msg.className = "interest-msg error";
+            msg.textContent = "Please enter your name and email.";
+            return;
+          }
+
+          btn.disabled = true;
+          try {
+            var res = await fetch("/api/bookcover-inquiry", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(payload),
+            });
+            var data = await res.json().catch(function () {
+              return {};
+            });
+            if (!res.ok) {
+              throw new Error(data.error || "Something went wrong.");
+            }
+            msg.className = "interest-msg success";
+            msg.textContent =
+              "Thank you — your interest is on file. The CercaLabs team will be in touch.";
+            msg.style.display = "block";
+            form.reset();
+          } catch (err) {
+            msg.className = "interest-msg error";
+            msg.textContent = err.message || "Submission failed. Please try again.";
+            msg.style.display = "block";
+          } finally {
+            btn.disabled = false;
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
