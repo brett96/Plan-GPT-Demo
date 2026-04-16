@@ -64,10 +64,43 @@
             <textarea id="message" name="message" placeholder="Optional — book size, timeline, questions…"></textarea>
           </div>
 
-          <button type="submit" class="interest-submit" id="submit-btn">Submit</button>
+          <button type="submit" class="interest-submit" id="submit-btn">
+            <span class="interest-submit-label">Submit</span>
+          </button>
         </form>
+      </div>
+    </div>
 
-        <div id="form-msg" class="interest-msg" role="status"></div>
+    <div
+      id="loading-overlay"
+      class="interest-loading-overlay"
+      hidden
+      aria-hidden="true"
+      aria-busy="true"
+    >
+      <div class="interest-loading-inner">
+        <div class="interest-spinner" aria-hidden="true"></div>
+        <p class="interest-loading-text">Submitting…</p>
+      </div>
+    </div>
+
+    <div
+      id="result-modal"
+      class="interest-modal-backdrop"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="result-modal-title"
+    >
+      <div class="interest-modal">
+        <h2 id="result-modal-title" class="interest-modal-title"></h2>
+        <p id="result-modal-body" class="interest-modal-body"></p>
+        <p id="result-modal-redirect" class="interest-modal-redirect" hidden>
+          Redirecting to the home page…
+        </p>
+        <button type="button" id="result-modal-dismiss" class="interest-modal-dismiss" hidden>
+          OK
+        </button>
       </div>
     </div>
 
@@ -75,13 +108,52 @@
       (function () {
         var form = document.getElementById("bookcover-interest-form");
         var btn = document.getElementById("submit-btn");
-        var msg = document.getElementById("form-msg");
+        var overlay = document.getElementById("loading-overlay");
+        var modal = document.getElementById("result-modal");
+        var modalTitle = document.getElementById("result-modal-title");
+        var modalBody = document.getElementById("result-modal-body");
+        var modalRedirect = document.getElementById("result-modal-redirect");
+        var modalDismiss = document.getElementById("result-modal-dismiss");
+        var REDIRECT_MS = 2800;
+
+        function showLoading() {
+          overlay.hidden = false;
+          overlay.setAttribute("aria-hidden", "false");
+          document.body.classList.add("interest-no-scroll");
+        }
+
+        function hideLoading() {
+          overlay.hidden = true;
+          overlay.setAttribute("aria-hidden", "true");
+          document.body.classList.remove("interest-no-scroll");
+        }
+
+        function showResultModal(title, body, isError, doRedirect) {
+          modalTitle.textContent = title;
+          modalBody.textContent = body;
+          modal.classList.toggle("is-error", !!isError);
+          if (modalRedirect) {
+            modalRedirect.hidden = !doRedirect;
+          }
+          if (modalDismiss) {
+            modalDismiss.hidden = !!doRedirect;
+          }
+          modal.hidden = false;
+          if (doRedirect) {
+            setTimeout(function () {
+              window.location.href = "/";
+            }, REDIRECT_MS);
+          }
+        }
+
+        if (modalDismiss) {
+          modalDismiss.addEventListener("click", function () {
+            modal.hidden = true;
+          });
+        }
 
         form.addEventListener("submit", async function (e) {
           e.preventDefault();
-          msg.className = "interest-msg";
-          msg.textContent = "";
-          msg.style.display = "none";
 
           var fd = new FormData(form);
           var payload = {
@@ -95,12 +167,19 @@
           };
 
           if (!payload.name || !payload.email) {
-            msg.className = "interest-msg error";
-            msg.textContent = "Please enter your name and email.";
+            showResultModal(
+              "Missing information",
+              "Please enter your full name and work email.",
+              true,
+              false
+            );
             return;
           }
 
+          showLoading();
           btn.disabled = true;
+          var lockSubmitUntilRedirect = false;
+
           try {
             var res = await fetch("/api/bookcover-inquiry", {
               method: "POST",
@@ -110,20 +189,38 @@
             var data = await res.json().catch(function () {
               return {};
             });
+            hideLoading();
             if (!res.ok) {
-              throw new Error(data.error || "Something went wrong.");
+              showResultModal(
+                "Something went wrong",
+                data.error || "Submission failed. Please try again or email info@cercalabs.com.",
+                true,
+                true
+              );
+              lockSubmitUntilRedirect = true;
+              return;
             }
-            msg.className = "interest-msg success";
-            msg.textContent =
-              "Thank you — your interest is on file. The CercaLabs team will be in touch.";
-            msg.style.display = "block";
             form.reset();
+            showResultModal(
+              "Thank you",
+              "Your interest is on file. The CercaLabs team will be in touch.",
+              false,
+              true
+            );
+            lockSubmitUntilRedirect = true;
           } catch (err) {
-            msg.className = "interest-msg error";
-            msg.textContent = err.message || "Submission failed. Please try again.";
-            msg.style.display = "block";
+            hideLoading();
+            showResultModal(
+              "Something went wrong",
+              err.message || "Submission failed. Please try again.",
+              true,
+              true
+            );
+            lockSubmitUntilRedirect = true;
           } finally {
-            btn.disabled = false;
+            if (!lockSubmitUntilRedirect) {
+              btn.disabled = false;
+            }
           }
         });
       })();
