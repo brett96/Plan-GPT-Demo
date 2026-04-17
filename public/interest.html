@@ -22,12 +22,7 @@
           updates only.
         </p>
 
-        <form id="bookcover-interest-form" novalidate>
-          <div class="interest-field hp-field" aria-hidden="true">
-            <label for="company-website">Company website</label>
-            <input type="text" id="company-website" name="_companyWebsite" tabindex="-1" autocomplete="off" />
-          </div>
-
+        <form id="bookcover-interest-form" novalidate autocomplete="on">
           <div class="interest-field">
             <label for="name">Full name <span class="req">*</span></label>
             <input type="text" id="name" name="name" required autocomplete="name" />
@@ -115,6 +110,7 @@
         var modalRedirect = document.getElementById("result-modal-redirect");
         var modalDismiss = document.getElementById("result-modal-dismiss");
         var REDIRECT_MS = 2800;
+        var FETCH_MS = 60000;
 
         function showLoading() {
           overlay.hidden = false;
@@ -163,7 +159,6 @@
             phone: (fd.get("phone") || "").trim(),
             role: (fd.get("role") || "").trim(),
             message: (fd.get("message") || "").trim(),
-            _companyWebsite: (fd.get("_companyWebsite") || "").trim(),
           };
 
           if (!payload.name || !payload.email) {
@@ -180,11 +175,17 @@
           btn.disabled = true;
           var lockSubmitUntilRedirect = false;
 
+          var fetchTimer;
           try {
+            var ac = new AbortController();
+            fetchTimer = setTimeout(function () {
+              ac.abort();
+            }, FETCH_MS);
             var res = await fetch("/api/bookcover-inquiry", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(payload),
+              signal: ac.signal,
             });
             var data = await res.json().catch(function () {
               return {};
@@ -210,14 +211,17 @@
             lockSubmitUntilRedirect = true;
           } catch (err) {
             hideLoading();
-            showResultModal(
-              "Something went wrong",
-              err.message || "Submission failed. Please try again.",
-              true,
-              true
-            );
+            var msg =
+              err && err.name === "AbortError"
+                ? "The request took too long. Check your connection and try again, or email info@cercalabs.com."
+                : err.message || "Submission failed. Please try again.";
+            console.error("[interest-form]", err);
+            showResultModal("Something went wrong", msg, true, true);
             lockSubmitUntilRedirect = true;
           } finally {
+            if (fetchTimer) {
+              clearTimeout(fetchTimer);
+            }
             if (!lockSubmitUntilRedirect) {
               btn.disabled = false;
             }

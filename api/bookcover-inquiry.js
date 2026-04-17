@@ -58,11 +58,6 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: "Expected JSON object" });
   }
 
-  // Honeypot — leave empty in real browsers
-  if (body._companyWebsite) {
-    return res.status(200).json({ ok: true });
-  }
-
   const name = String(body.name || "").trim();
   const email = String(body.email || "").trim();
   const company = String(body.company || "").trim();
